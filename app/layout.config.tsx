@@ -1,5 +1,8 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
+export const title = "SaaS Foundations";
+export const description = "NextJS Template to build SaaS applications";
+export const owner = "Rajiv I'm";
 /**
  * Shared layout configurations
  *
@@ -25,9 +28,11 @@ export const baseOptions: BaseLayoutProps = {
   },
   links: [
     {
-      text: 'Documentation',
-      url: '/docs',
-      active: 'nested-url',
+      text: "Documentation",
+      url: "/docs",
+      active: "nested-url",
     },
   ],
 };
+
+export const postsPerPage = 5;
