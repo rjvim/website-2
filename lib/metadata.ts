@@ -6,8 +6,8 @@ export function createMetadata(override: Metadata): Metadata {
     openGraph: {
       title: override.title ?? undefined,
       description: override.description ?? undefined,
-      url: "https://saas-foundations-oss-static.vercel.app",
-      siteName: "OSS",
+      url: "https://rjv.im",
+      siteName: "rjv.im",
       ...override.openGraph,
     },
     twitter: {

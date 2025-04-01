@@ -7,8 +7,8 @@ import {
   DocsDescription,
   DocsTitle,
 } from "fumadocs-ui/page";
-import { blogsMetaImage } from "@/components/metadata-image";
-import { createMetadata } from "@/components/metadata";
+import { blogsMetaImage } from "@/lib/metadata-image";
+import { createMetadata } from "@/lib/metadata";
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;

@@ -1,7 +1,7 @@
 import ListWithPagination, {
   generateStaticParams,
 } from "@/components/list-pagination";
-import { baseUrl, createMetadata } from "@/components/metadata";
+import { baseUrl, createMetadata } from "@/lib/metadata";
 import type { Metadata, ResolvingMetadata } from "next";
 
 export default ListWithPagination;

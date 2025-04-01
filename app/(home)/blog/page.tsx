@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 
 import { BlogList } from "@/components/blog-list";
-import { baseUrl, createMetadata } from "@/components/metadata";
+import { baseUrl, createMetadata } from "@/lib/metadata";
 
 export default function List() {
   return <BlogList page={1} />;

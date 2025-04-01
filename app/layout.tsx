@@ -1,15 +1,10 @@
 import "./global.css";
 import { RootProvider } from "fumadocs-ui/provider";
-import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
-import { baseUrl, createMetadata } from "@/components/metadata";
+import { baseUrl, createMetadata } from "@/lib/metadata";
 import { description } from "./layout.config";
 import { cn } from "@/lib/utils";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,8 +17,8 @@ const geistMono = localFont({
 
 export const metadata = createMetadata({
   title: {
-    template: "%s | SaaS Foundations",
-    default: "SaaS Foundations",
+    template: "%s | rjv.im",
+    default: "rjv.im",
   },
   description: description,
   metadataBase: baseUrl,
