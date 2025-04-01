@@ -1,12 +1,5 @@
-import { cn } from "@foundations/shadcn/lib/utils";
-import type {
-  BackgroundImageLayer,
-  ContentLayout,
-  GradientLayer,
-  OhImgBaseTemplateProps,
-  PatternLayer,
-  PositionedElement,
-} from "./types";
+import { cn } from "@/lib/utils";
+import type { GradientLayer, PatternLayer, PositionedElement } from "./types";
 
 /**
  * Converts hex color to rgba format with specified opacity
