@@ -1,4 +1,5 @@
 {
-  "title": "Behind The Scenes",
-  "root": true
+  "title": "Framework",
+  "description": "The docs framework",
+  "root": false
 }

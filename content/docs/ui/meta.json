@@ -1,5 +1,5 @@
 {
   "title": "Frontend",
   "pages": ["---Introduction---", "button", "accordion", "tabs"],
-  "root": true
+  "root": false
 }

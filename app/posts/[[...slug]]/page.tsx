@@ -4,6 +4,7 @@ import {
   DocsBody,
   DocsDescription,
   DocsTitle,
+  DocsCategory,
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import defaultMdxComponents, { createRelativeLink } from "fumadocs-ui/mdx";
@@ -23,6 +24,7 @@ export default async function Page(props: {
       full={page.data.full}
       tableOfContent={{
         style: "clerk",
+        single: false,
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
@@ -33,9 +35,12 @@ export default async function Page(props: {
             ...defaultMdxComponents,
             // this allows you to link to other pages with relative file paths
             a: createRelativeLink(docsSource, page),
-            // you can add other MDX components here
+            // you can add other MDX components here,
           }}
         />
+        {page.data.index ? (
+          <DocsCategory page={page} from={docsSource} />
+        ) : null}
       </DocsBody>
     </DocsPage>
   );

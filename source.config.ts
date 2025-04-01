@@ -3,15 +3,27 @@ import {
   defineConfig,
   defineDocs,
   frontmatterSchema,
+  metaSchema,
 } from "fumadocs-mdx/config";
 import { z } from "zod";
 import { transformerTwoslash } from "fumadocs-twoslash";
+import { createFileSystemTypesCache } from "fumadocs-twoslash/cache-fs";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import { transformerRemoveNotationEscape } from "@shikijs/transformers";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
 
 export const docs = defineDocs({
+  docs: {
+    schema: frontmatterSchema.extend({
+      index: z.boolean().default(false),
+    }),
+  },
+  meta: {
+    schema: metaSchema.extend({
+      description: z.string().optional(),
+    }),
+  },
   dir: "content/docs",
 });
 
@@ -50,7 +62,9 @@ export default defineConfig({
       },
       transformers: [
         ...(rehypeCodeDefaultOptions.transformers ?? []),
-        transformerTwoslash(),
+        // transformerTwoslash({
+        //   typesCache: createFileSystemTypesCache(),
+        // }),
         transformerRemoveNotationEscape(),
       ],
     },
