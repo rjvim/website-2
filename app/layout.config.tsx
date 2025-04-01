@@ -30,7 +30,6 @@ export const baseOptions: BaseLayoutProps = {
     {
       text: "Posts",
       url: "/posts",
-      active: "nested-url",
     },
   ],
 };
