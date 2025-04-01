@@ -5,7 +5,7 @@ import type { InferMetaType, InferPageType } from "fumadocs-core/source";
 import type { PageTree } from "fumadocs-core/server";
 
 export const docsSource = loader({
-  baseUrl: "/docs",
+  baseUrl: "/posts",
   source: docs.toFumadocsSource(),
 });
 
