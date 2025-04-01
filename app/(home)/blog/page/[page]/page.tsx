@@ -1,7 +1,6 @@
-import {
-  ListWithPagination,
+import ListWithPagination, {
   generateStaticParams,
-} from "@/components/blog-list";
+} from "@/components/list-pagination";
 import { baseUrl, createMetadata } from "@/components/metadata";
 import type { Metadata, ResolvingMetadata } from "next";
 
@@ -12,6 +11,10 @@ export { generateStaticParams };
 export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  const previousImages = (await parent).openGraph?.images || [];
+
+  //   console.log("previousImages", previousImages);
+
   return createMetadata({
     title: "Blog",
     description: "Articles which blow your mind",
