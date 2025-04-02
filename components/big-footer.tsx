@@ -1,3 +1,5 @@
+"use client";
+
 import { GridBackground } from "./grid-background";
 import { Icons } from "./icons";
 
