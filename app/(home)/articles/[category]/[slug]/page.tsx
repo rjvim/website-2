@@ -1,8 +1,4 @@
-import {
-  blogSource,
-  getBlogPost,
-  getPostsByCategoryAndSlug,
-} from "@/lib/source";
+import { blogSource, getPostsByCategoryAndSlug } from "@/lib/source";
 import { notFound } from "next/navigation";
 import {
   DocsPage,
