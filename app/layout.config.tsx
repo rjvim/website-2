@@ -44,8 +44,8 @@ export const linkItems: LinkItemType[] = [
   },
   {
     icon: <Icons.posts />,
-    text: "Posts",
-    url: "/posts",
+    text: "Me",
+    url: "/me",
     active: "url",
   },
   {
