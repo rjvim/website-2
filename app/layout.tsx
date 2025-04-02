@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </head>
       <body
         className={cn(
-          "bg-background overscroll-none font-sans antialiased",
+          "overscroll-none font-sans antialiased",
           `${geistSans.variable} ${geistMono.variable}`
         )}
       >
