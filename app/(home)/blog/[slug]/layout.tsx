@@ -8,9 +8,9 @@ export default function Layout({ children }: { children: ReactNode }) {
       nav={{ enabled: false }}
       tree={sortedByDatePageTree}
       sidebar={{ enabled: false, prefetch: false, tabs: false }}
-      containerProps={{
-        className: "relative max-w-7xl mx-auto md:[--fd-nav-height:59px]",
-      }}
+      // containerProps={{
+      //   className: "relative max-w-7xl mx-auto md:[--fd-nav-height:59px]",
+      // }}
     >
       {children}
     </DocsLayout>

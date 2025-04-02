@@ -34,9 +34,9 @@ export default async function Page(props: {
         style: "clerk",
         single: false,
       }}
-      article={{
-        className: "!max-w-[1120px]",
-      }}
+      // article={{
+      //   className: "!max-w-[1120px]",
+      // }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
