@@ -1,19 +1,19 @@
+import { GridBackground } from "@/components/grid-background";
+import Hero from "@/components/hero";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 flex-col justify-center text-center">
-      <h1 className="mb-4 text-2xl font-bold">Hello World</h1>
-      <p className="text-fd-muted-foreground">
-        You can open{" "}
-        <Link
-          href="/posts"
-          className="text-fd-foreground font-semibold underline"
-        >
-          /docs
-        </Link>{" "}
-        and see the documentation.
-      </p>
-    </main>
+    <div className="flex flex-1 flex-col justify-center text-center">
+      <div className="relative flex w-full flex-col items-center overflow-x-hidden">
+        <GridBackground maxWidthClass="max-w-7xl" />
+
+        <div className="relative flex items-center justify-center w-full mx-auto container">
+          <div className="space-y-8">
+            <Hero />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

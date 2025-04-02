@@ -40,10 +40,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body
-        className={cn(
-          "overscroll-none font-sans antialiased",
-          `${geistSans.variable} ${geistMono.variable}`
-        )}
+        className={cn("relative flex min-h-svh flex-col overflow-x-hidden")}
       >
         <Provider>{children}</Provider>
       </body>

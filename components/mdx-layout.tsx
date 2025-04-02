@@ -77,7 +77,7 @@ export default function MdxLayout({
 }: MdxLayoutProps): ReactNode {
   return (
     <>
-      <Section className="p-4 lg:p-6">
+      <Section className="p-4 lg:p-6 bg-dashed">
         <h1 className="text-center font-bold text-3xl leading-tight tracking-tighter md:text-4xl">
           {title}
         </h1>
@@ -90,18 +90,24 @@ export default function MdxLayout({
           children: [],
         }}
         sidebar={{ enabled: false, prefetch: false, tabs: false }}
+        containerProps={{
+          className: cn(
+            "border-border/70 border-dashed sm:border-x dark:border-border container md:[--fd-nav-height:57px]"
+          ),
+        }}
       >
         <DocsPage
           toc={toc}
           article={{
-            className: "max-w-none !p-0",
+            className: "!m-[unset] max-w-none",
           }}
           tableOfContent={{
             style: "clerk",
             single: false,
           }}
         >
-          <Section className="h-full" sectionClassName="flex flex-1">
+          <div className="prose min-w-0 flex-1 px-4">{children}</div>
+          {/* <Section className="h-full" sectionClassName="flex flex-1">
             <article className="flex min-h-full flex-col lg:flex-row">
               <div className="flex flex-1 flex-col gap-4">
                 {toc?.length ? (
@@ -113,7 +119,7 @@ export default function MdxLayout({
                 <div className="prose min-w-0 flex-1 px-4">{children}</div>
               </div>
             </article>
-          </Section>
+          </Section> */}
         </DocsPage>
       </DocsLayout>
     </>

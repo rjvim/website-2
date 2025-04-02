@@ -1,10 +1,56 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import { baseOptions, linkItems } from "@/app/layout.config";
 import { getLinks } from "fumadocs-ui/layouts/shared";
 import { Header } from "@/components/header";
+import { Icons } from "@/components/icons";
+import BigFooter from "@/components/big-footer";
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const footerNavigation = {
+    solutions: [
+      { name: "Marketing", href: "/marketing" },
+      { name: "Analytics", href: "/analytics" },
+      { name: "Automation", href: "/automation" },
+      { name: "Commerce", href: "/commerce" },
+    ],
+    support: [
+      { name: "Documentation", href: "/docs" },
+      { name: "Guides", href: "/guides" },
+      { name: "API Status", href: "/api-status" },
+    ],
+    company: [
+      { name: "About", href: "/about" },
+      { name: "Blog", href: "/blog" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
+    ],
+    legal: [
+      { name: "Privacy", href: "/privacy" },
+      { name: "Terms", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookies" },
+    ],
+    social: [
+      {
+        name: "Twitter",
+        href: "https://twitter.com/company",
+        icon: Icons.x,
+      },
+      {
+        name: "GitHub",
+        href: "https://github.com/company",
+        icon: Icons.github,
+      },
+      {
+        name: "YouTube",
+        href: "https://youtube.com/company",
+        icon: Icons.youtube,
+      },
+    ],
+  };
+
   return (
     <HomeLayout
       {...baseOptions}
@@ -21,6 +67,16 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div className="flex flex-1 flex-col divide-y divide-dashed divide-border/70 border-border/70 border-dashed sm:border-b dark:divide-border dark:border-border">
         {children}
       </div>
+
+      <BigFooter
+        solutions={footerNavigation.solutions}
+        support={footerNavigation.support}
+        company={footerNavigation.company}
+        legal={footerNavigation.legal}
+        social={footerNavigation.social}
+        companyName="SaaS Foundations"
+        companyDescription="Building the foundation for your next SaaS product."
+      />
     </HomeLayout>
   );
 }
