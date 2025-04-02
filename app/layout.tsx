@@ -44,7 +44,29 @@ export default function Layout({ children }: { children: ReactNode }) {
           `${geistSans.variable} ${geistMono.variable}`
         )}
       >
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          search={{
+            options: {
+              type: "static",
+              defaultTag: "docs",
+              tags: [
+                {
+                  name: "Docs",
+                  value: "docs",
+                },
+                {
+                  name: "Blog",
+                  value: "blog",
+                },
+              ],
+            },
+          }}
+          theme={{
+            enabled: false,
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import { Icons } from "@/components/icons";
+import type { BaseLayoutProps, LinkItemType } from "fumadocs-ui/layouts/shared";
 
 export const title = "SaaS Foundations";
 export const description = "NextJS Template to build SaaS applications";
@@ -33,5 +34,26 @@ export const baseOptions: BaseLayoutProps = {
     },
   ],
 };
+
+export const linkItems: LinkItemType[] = [
+  {
+    icon: <Icons.info />,
+    text: "About",
+    url: "/about",
+    active: "url",
+  },
+  {
+    icon: <Icons.posts />,
+    text: "Posts",
+    url: "/posts",
+    active: "url",
+  },
+  {
+    icon: <Icons.tags />,
+    text: "Tags",
+    url: "/tags",
+    active: "url",
+  },
+];
 
 export const postsPerPage = 5;
