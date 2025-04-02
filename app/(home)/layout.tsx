@@ -35,18 +35,13 @@ export default function Layout({ children }: { children: ReactNode }) {
     social: [
       {
         name: "Twitter",
-        href: "https://twitter.com/company",
+        href: "https://x.com/rjv_im",
         icon: Icons.x,
       },
       {
         name: "GitHub",
-        href: "https://github.com/company",
+        href: "https://github.com/rjvim",
         icon: Icons.github,
-      },
-      {
-        name: "YouTube",
-        href: "https://youtube.com/company",
-        icon: Icons.youtube,
       },
     ],
   };
@@ -74,8 +69,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         company={footerNavigation.company}
         legal={footerNavigation.legal}
         social={footerNavigation.social}
-        companyName="SaaS Foundations"
-        companyDescription="Building the foundation for your next SaaS product."
+        companyName="rjv.im"
+        companyDescription="I am Rajiv. I love coding and solving problems."
       />
     </HomeLayout>
   );
