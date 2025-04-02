@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { baseUrl, createMetadata } from "@/lib/metadata";
 import { description } from "./layout.config";
 import { cn } from "@/lib/utils";
+import { Provider } from "./provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,29 +45,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           `${geistSans.variable} ${geistMono.variable}`
         )}
       >
-        <RootProvider
-          search={{
-            options: {
-              type: "static",
-              defaultTag: "docs",
-              tags: [
-                {
-                  name: "Docs",
-                  value: "docs",
-                },
-                {
-                  name: "Blog",
-                  value: "blog",
-                },
-              ],
-            },
-          }}
-          theme={{
-            enabled: false,
-          }}
-        >
-          {children}
-        </RootProvider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
