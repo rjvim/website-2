@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MoveRight, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Icons } from "./icons";
 
 export default function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -25,7 +26,7 @@ export default function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full">
+    <div className="w-full grid-magicpattern">
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
@@ -76,12 +77,16 @@ export default function Hero() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4" variant="outline">
-              Jump on a call <PhoneCall className="w-4 h-4" />
-            </Button>
-            <Button size="lg" className="gap-4">
-              Sign up here <MoveRight className="w-4 h-4" />
-            </Button>
+            <Link href="https://x.com/rjv_im" target="_blank">
+              <Button size="lg" className="gap-4" variant="outline">
+                Follow rjv.im <Icons.x className="w-4 h-4" />
+              </Button>
+            </Link>
+            <Link href="https://x.com/rjv_im" target="_blank">
+              <Button size="lg" className="gap-4">
+                Browse Posts <MoveRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
