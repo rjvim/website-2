@@ -11,6 +11,7 @@ import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { cn } from "@/lib/utils";
 import { GridBackground } from "@/components/grid-background";
 import Hero from "@/components/hero";
+import { Calendar } from "lucide-react";
 
 export default async function Page(props: {
   params: Promise<{ category: string; slug: string }>;
@@ -30,10 +31,37 @@ export default async function Page(props: {
 
   return (
     <>
-      <div className="container col-span-4 p-12 bg-dashed">
-        <DocsTitle>{page.data.title}</DocsTitle>
-        <DocsDescription>{page.data.description}</DocsDescription>
-        <div className="p-2 bg-red-300">{lastUpdate?.toLocaleDateString()}</div>
+      <div className="relative container px-4 py-8 md:p-12 text-left">
+        <GridBackground maxWidthClass="container" />
+        <div className="mb-4 text-gray-600 text-sm font-medium">
+          <span className="inline-flex items-center gap-1.5">
+            <Calendar className="h-4 w-4" />
+            Published{" "}
+            {lastUpdate?.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+        </div>
+        <DocsTitle className="text-left">{page.data.title}</DocsTitle>
+        <DocsDescription className="text-left mt-3">
+          {page.data.description}
+        </DocsDescription>
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+            {params.category}
+          </span>
+          {tags.length > 0 &&
+            tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2.5 py-0.5 bg-gray-200 text-gray-800 rounded-full text-xs font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+        </div>
       </div>
 
       <DocsLayout
