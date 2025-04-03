@@ -264,3 +264,12 @@
     }
   }
 }
+
+#nd-page {
+  @apply col-span-4 xl:col-span-3;
+}
+
+#nd-toc {
+  @apply mx-auto;
+  /* @apply mx-auto; */
+}

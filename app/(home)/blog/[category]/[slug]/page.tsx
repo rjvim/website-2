@@ -36,7 +36,9 @@ export default async function Page(props: {
       }}
       sidebar={{ enabled: false, prefetch: false, tabs: false }}
       containerProps={{
-        className: cn("relative container md:[--fd-nav-height:57px]"),
+        className: cn(
+          "relative container grid grid-cols-4 md:[--fd-nav-height:57px]"
+        ),
       }}
     >
       <GridBackground maxWidthClass="container" />
@@ -52,7 +54,7 @@ export default async function Page(props: {
           single: false,
         }}
         article={{
-          className: "!m-[unset] max-w-none py-12",
+          className: cn("!m-[unset] max-w-none bg-zinc-50/25 py-8 md:py-12"),
         }}
       >
         <DocsTitle>{page.data.title}</DocsTitle>
