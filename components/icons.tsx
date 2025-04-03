@@ -37,6 +37,7 @@ import {
   Trash,
   User,
   X,
+  Computer,
 } from "lucide-react";
 type IconProps = React.HTMLAttributes<SVGElement>;
 

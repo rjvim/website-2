@@ -1,4 +1,9 @@
-import { blogSource, getPostsByCategoryAndSlug } from "@/lib/source";
+import {
+  blogSource,
+  getPostsByCategoryAndSlug,
+  getCategoryBySlug,
+} from "@/lib/source";
+import React from "react";
 import { notFound } from "next/navigation";
 import {
   DocsPage,
@@ -34,17 +39,28 @@ export default async function Page(props: {
       <div className="relative container px-4 py-8 md:p-12 text-left">
         <GridBackground maxWidthClass="container" />
         <div className="mb-4 text-gray-600 dark:text-gray-400 text-sm font-medium">
-          <span className="inline-flex items-center gap-1.5">
-            <Calendar className="h-4 w-4" />
-            Published{" "}
-            {lastUpdate?.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </span>
+          <div className="flex flex-wrap gap-3">
+            <span className="inline-flex items-center gap-1.5">
+              {getCategoryBySlug(params.category).icon &&
+                React.createElement(getCategoryBySlug(params.category).icon, {
+                  className: "h-4 w-4",
+                })}
+              {getCategoryBySlug(params.category).label}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" />
+              Published{" "}
+              {lastUpdate?.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          </div>
         </div>
-        <DocsTitle className="text-left dark:text-white">{page.data.title}</DocsTitle>
+        <DocsTitle className="text-left dark:text-white">
+          {page.data.title}
+        </DocsTitle>
         <DocsDescription className="text-left mt-3 dark:text-gray-300">
           {page.data.description}
         </DocsDescription>

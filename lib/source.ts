@@ -3,6 +3,8 @@ import { loader } from "fumadocs-core/source";
 import { createMDXSource } from "fumadocs-mdx";
 import type { InferMetaType, InferPageType } from "fumadocs-core/source";
 import type { PageTree } from "fumadocs-core/server";
+import { Icons } from "@/components/icons";
+import { Computer } from "lucide-react";
 
 export const docsSource = loader({
   baseUrl: "/posts",
@@ -75,5 +77,21 @@ export const getPostsByCategoryAndSlug = (category: string, slug: string) => {
       )
       .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())[0] ||
     undefined
+  );
+};
+
+export const getCategoryBySlug = (slug: string) => {
+  const categories = {
+    tech: {
+      label: "Tech",
+      icon: Computer,
+    },
+  };
+
+  return (
+    categories[slug as keyof typeof categories] || {
+      label: slug.toUpperCase(),
+      icon: Icons.github,
+    }
   );
 };
