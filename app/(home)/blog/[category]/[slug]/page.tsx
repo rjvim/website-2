@@ -36,7 +36,7 @@ export default async function Page(props: {
 
   return (
     <>
-      <div className="relative container px-4 py-8 md:p-12 text-left">
+      <div className="relative container px-4 py-8 lg:py-12 lg:px-6 text-left">
         <GridBackground maxWidthClass="container" />
         <div className="mb-4 text-gray-600 dark:text-gray-400 text-sm font-medium">
           <div className="flex flex-wrap gap-3">
