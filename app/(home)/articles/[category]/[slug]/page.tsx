@@ -7,6 +7,8 @@ import {
   DocsTitle,
 } from "fumadocs-ui/page";
 import defaultMdxComponents from "fumadocs-ui/mdx";
+import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import { cn } from "@/lib/utils";
 
 export default async function Page(props: {
   params: Promise<{ category: string; slug: string }>;
@@ -23,27 +25,41 @@ export default async function Page(props: {
   const MDX = page.data.body;
 
   return (
-    <DocsPage
-      toc={page.data.toc}
-      full={page.data.full}
-      lastUpdate={lastUpdate}
-      footer={{
-        enabled: false,
+    <DocsLayout
+      nav={{ enabled: false }}
+      tree={{
+        name: "Tree",
+        children: [],
       }}
-      tableOfContent={{
-        style: "clerk",
-        single: false,
+      sidebar={{ enabled: false, prefetch: false, tabs: false }}
+      containerProps={{
+        className: cn(
+          "border-border/70 border-dashed sm:border-x dark:border-border container md:[--fd-nav-height:57px]"
+        ),
       }}
-      // article={{
-      //   className: "!max-w-[1120px]",
-      // }}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
-        <MDX components={{ ...defaultMdxComponents }} />
-      </DocsBody>
-    </DocsPage>
+      <DocsPage
+        toc={page.data.toc}
+        full={page.data.full}
+        lastUpdate={lastUpdate}
+        footer={{
+          enabled: false,
+        }}
+        tableOfContent={{
+          style: "clerk",
+          single: false,
+        }}
+        // article={{
+        //   className: "!max-w-[1120px]",
+        // }}
+      >
+        <DocsTitle>{page.data.title}</DocsTitle>
+        <DocsDescription>{page.data.description}</DocsDescription>
+        <DocsBody>
+          <MDX components={{ ...defaultMdxComponents }} />
+        </DocsBody>
+      </DocsPage>
+    </DocsLayout>
   );
 }
 
