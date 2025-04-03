@@ -76,6 +76,9 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
+
+  --grid-base-color: rgba(66, 71, 112, 0.09);
+  --grid-dots-color: rgba(66, 71, 112, 0.09);
 }
 
 .dark {
@@ -140,6 +143,9 @@
   --sidebar-border: oklch(1 0 0 / 10%);
 
   --sidebar-ring: oklch(0.556 0 0);
+
+  --grid-base-color: rgba(255, 255, 255, 0.09);
+  --grid-dots-color: rgba(255, 255, 255, 0.09);
 }
 
 @theme inline {

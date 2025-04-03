@@ -15,8 +15,6 @@ interface GridBackgroundProps {
 export const GridBackground: FC<GridBackgroundProps> = ({
   columns = 4,
   className = "",
-  baseColor = "rgba(197, 15, 160, 0.09)",
-  dottedColor = "rgba(66,71,112,0.09)",
   maxWidthClass = "container",
 }) => {
   const { theme } = useTheme();
@@ -29,11 +27,11 @@ export const GridBackground: FC<GridBackgroundProps> = ({
       key={i}
       className="h-full w-px"
       style={{
-        backgroundColor: i === 0 ? baseColor : "transparent",
+        backgroundColor: i === 0 ? "var(--grid-base-color)" : "transparent",
         backgroundImage:
           i === 0
             ? "none"
-            : `linear-gradient(180deg, ${dottedColor} 50%, transparent 50%)`,
+            : `linear-gradient(180deg, var(--grid-dots-color) 50%, transparent 50%)`,
         backgroundSize: i === 0 ? "auto" : "1px 8px",
       }}
     />
@@ -57,7 +55,7 @@ export const GridBackground: FC<GridBackgroundProps> = ({
             {columnElements}
             <div
               className="absolute top-0 right-0 h-full w-px"
-              style={{ backgroundColor: baseColor }}
+              style={{ backgroundColor: "var(--grid-base-color)" }}
             />
           </div>
         </div>
