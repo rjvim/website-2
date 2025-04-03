@@ -70,19 +70,19 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Welcome to rjv.im - This is where I blog, scribble, articulate my
-              thoughts, ideas, work, commentary and opinions.
+              Welcome to rjv.im - This is where I articulate my work, open
+              source projects,thoughts, ideas, work, commentary and opinions.
             </p>
           </div>
           <div className="flex flex-row gap-3">
             <Link href="https://x.com/rjv_im" target="_blank">
               <Button size="lg" className="gap-4" variant="outline">
-                Would love to connect <Icons.x className="w-4 h-4" />
+                Let's Connect <Icons.x className="w-4 h-4" />
               </Button>
             </Link>
             <Link href="https://x.com/rjv_im" target="_blank">
               <Button size="lg" className="gap-4">
-                Browse Posts <MoveRight className="w-4 h-4" />
+                View Posts <MoveRight className="w-4 h-4" />
               </Button>
             </Link>
           </div>

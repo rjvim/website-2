@@ -44,6 +44,7 @@ type IconProps = React.HTMLAttributes<SVGElement>;
 export type Icon = typeof LucideIcon;
 
 export const Icons = {
+  computer: Computer,
   logo: Code,
   close: X,
   menu: Menu,
