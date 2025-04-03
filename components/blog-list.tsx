@@ -27,8 +27,6 @@ export function CategoryBlogList({
   const posts = allPosts.slice((page - 1) * pageSize, page * pageSize);
   const totalPages = Math.ceil(allPosts.length / pageSize);
 
-  console.log("categoryInfo", categoryInfo);
-
   return (
     <PostList
       posts={posts}
