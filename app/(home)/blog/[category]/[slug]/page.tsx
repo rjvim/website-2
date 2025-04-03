@@ -33,7 +33,7 @@ export default async function Page(props: {
     <>
       <div className="relative container px-4 py-8 md:p-12 text-left">
         <GridBackground maxWidthClass="container" />
-        <div className="mb-4 text-gray-600 text-sm font-medium">
+        <div className="mb-4 text-gray-600 dark:text-gray-400 text-sm font-medium">
           <span className="inline-flex items-center gap-1.5">
             <Calendar className="h-4 w-4" />
             Published{" "}
@@ -44,19 +44,19 @@ export default async function Page(props: {
             })}
           </span>
         </div>
-        <DocsTitle className="text-left">{page.data.title}</DocsTitle>
-        <DocsDescription className="text-left mt-3">
+        <DocsTitle className="text-left dark:text-white">{page.data.title}</DocsTitle>
+        <DocsDescription className="text-left mt-3 dark:text-gray-300">
           {page.data.description}
         </DocsDescription>
         <div className="flex flex-wrap gap-2 mt-4">
-          <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+          <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full text-xs font-medium">
             {params.category}
           </span>
           {tags.length > 0 &&
             tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-0.5 bg-gray-200 text-gray-800 rounded-full text-xs font-medium"
+                className="px-2.5 py-0.5 bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-300 rounded-full text-xs font-medium"
               >
                 {tag}
               </span>
@@ -94,7 +94,7 @@ export default async function Page(props: {
             }}
             article={{
               className: cn(
-                "!m-[unset] max-w-none bg-zinc-50/50 py-8 md:py-12"
+                "!m-[unset] max-w-none bg-zinc-50/50 dark:bg-zinc-900/50 py-8 md:py-12"
               ),
             }}
           >
