@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://localhost:3000/about</loc><lastmod>2025-04-03T10:00:07.107Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/me</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/data-mesh-architecture</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/edge-computing-revolution</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/embracing-devops-culture</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/ethical-ai-development</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/jamstack-evolution</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/microservices-trade-offs</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/open-source-sustainability</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/tech/api-first-design</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/understanding-llm-development</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog/zero-trust-security</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/Architecture/microservices-trade-offs</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/Artificial Intelligence/ethical-ai-development</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/Data/data-mesh-architecture</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/Security/zero-trust-security</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/Web Development/jamstack-evolution</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/tech/edge-computing-revolution</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/tech/embracing-devops-culture</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/tech/open-source-sustainability</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/tech/tech</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3000/blog-3/tech/understanding-llm-development</loc><lastmod>2025-04-03T10:00:07.108Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/me</loc><lastmod>2025-04-03T11:05:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/page/1</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/page/2</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/page/3</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/edge-computing-revolution</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/embracing-devops-culture</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/ethical-ai-development</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/idea</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/idea/newsletter-subscription-for-static-sites</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/jamstack-evolution</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/microservices-trade-offs</loc><lastmod>2025-04-03T11:05:06.210Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/open-source-sustainability</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/solution</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/solution/implementing-category-on-fuma-docs</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/tech</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/tech/api-first-design</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/understanding-llm-development</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog/zero-trust-security</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/about</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3000/blog</loc><lastmod>2025-04-03T11:05:06.211Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
