@@ -3,6 +3,7 @@ import { BlogPost } from "@/lib/source";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Pagination } from "./pagination";
+import { GridBackground } from "./grid-background";
 
 export type PostListProps = {
   posts: BlogPost[];
@@ -23,6 +24,7 @@ export function PostList({
 }: PostListProps) {
   return (
     <section className="relative flex w-full flex-col items-center overflow-x-hidden">
+      <GridBackground maxWidthClass="container" />
       <div className="relative flex flex-col items-center justify-center w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 pt-24 space-y-16">
         <div className="text-center">
           <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl">
