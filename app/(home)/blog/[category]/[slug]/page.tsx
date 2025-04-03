@@ -90,7 +90,7 @@ export default async function Page(props: {
         containerProps={{
           className: cn(
             "flex-row-reverse",
-            "relative container md:[--fd-nav-height:57px]"
+            "relative container [--fd-nav-height:calc(var(--spacing)*14)] md:[--fd-nav-height:57px]"
           ),
         }}
       >

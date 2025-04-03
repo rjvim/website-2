@@ -1,5 +1,6 @@
 "use client";
 
+import { baseOptions } from "@/app/layout.config";
 import { GridBackground } from "./grid-background";
 import { Icons } from "./icons";
 
@@ -47,7 +48,7 @@ export default function BigFooter({
         <GridBackground maxWidthClass="container" />
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Icons.logo className="h-8 w-8" />
+            {baseOptions.nav?.title}
             <p className="text-sm/6 text-balance text-gray-600">
               {companyDescription}
             </p>
