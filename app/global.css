@@ -266,10 +266,13 @@
 }
 
 #nd-page {
-  @apply col-span-4 xl:col-span-3;
+  @apply col-span-4 xl:col-span-3 order-last;
 }
 
 #nd-toc {
-  @apply mx-auto;
+  @apply mx-auto pl-4;
   /* @apply mx-auto; */
+  div {
+    @apply pe-0;
+  }
 }

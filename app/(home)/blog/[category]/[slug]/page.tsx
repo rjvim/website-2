@@ -10,6 +10,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { cn } from "@/lib/utils";
 import { GridBackground } from "@/components/grid-background";
+import Hero from "@/components/hero";
 
 export default async function Page(props: {
   params: Promise<{ category: string; slug: string }>;
@@ -28,42 +29,54 @@ export default async function Page(props: {
   const MDX = page.data.body;
 
   return (
-    <DocsLayout
-      nav={{ enabled: false }}
-      tree={{
-        name: "Tree",
-        children: [],
-      }}
-      sidebar={{ enabled: false, prefetch: false, tabs: false }}
-      containerProps={{
-        className: cn(
-          "relative container grid grid-cols-4 md:[--fd-nav-height:57px]"
-        ),
-      }}
-    >
-      <GridBackground maxWidthClass="container" />
-      <DocsPage
-        toc={page.data.toc}
-        full={page.data.full}
-        lastUpdate={lastUpdate}
-        footer={{
-          enabled: false,
-        }}
-        tableOfContent={{
-          style: "clerk",
-          single: false,
-        }}
-        article={{
-          className: cn("!m-[unset] max-w-none bg-zinc-50/25 py-8 md:py-12"),
-        }}
-      >
+    <>
+      <div className="container col-span-4 p-12 bg-dashed">
         <DocsTitle>{page.data.title}</DocsTitle>
         <DocsDescription>{page.data.description}</DocsDescription>
-        <DocsBody>
-          <MDX components={{ ...defaultMdxComponents }} />
-        </DocsBody>
-      </DocsPage>
-    </DocsLayout>
+        <div className="p-2 bg-red-300">{lastUpdate?.toLocaleDateString()}</div>
+      </div>
+
+      <DocsLayout
+        nav={{ enabled: false }}
+        tree={{
+          name: "Tree",
+          children: [],
+        }}
+        sidebar={{ enabled: false, prefetch: false, tabs: false }}
+        containerProps={{
+          className: cn(
+            "flex-row-reverse",
+            "relative container md:[--fd-nav-height:57px]"
+          ),
+        }}
+      >
+        <GridBackground maxWidthClass="container" />
+
+        <div className="grid grid-cols-4">
+          <DocsPage
+            toc={page.data.toc}
+            full={page.data.full}
+            // lastUpdate={lastUpdate}
+            footer={{
+              enabled: false,
+            }}
+            tableOfContent={{
+              style: "clerk",
+              single: false,
+            }}
+            article={{
+              className: cn(
+                "!m-[unset] max-w-none bg-zinc-50/50 py-8 md:py-12"
+              ),
+            }}
+          >
+            <DocsBody>
+              <MDX components={{ ...defaultMdxComponents }} />
+            </DocsBody>
+          </DocsPage>
+        </div>
+      </DocsLayout>
+    </>
   );
 }
 
