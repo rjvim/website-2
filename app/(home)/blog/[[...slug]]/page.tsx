@@ -72,9 +72,6 @@ export default async function Page(props: {
           {page.data.description}
         </DocsDescription>
         <div className="flex flex-wrap gap-2 mt-4">
-          <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full text-xs font-medium">
-            {category}
-          </span>
           {tags.length > 0 &&
             tags.map((tag) => (
               <span
