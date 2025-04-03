@@ -77,7 +77,7 @@ export async function generateBlogStaticParams() {
     ...categoryPaginationParams,
   ];
 
-  console.log("generateStaticParams", allParams);
+  // console.log("generateStaticParams", allParams);
 
   return allParams;
 }

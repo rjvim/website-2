@@ -50,25 +50,9 @@ export default async function Page(props: {
     );
   }
 
-  const category = params.slug?.[0] || undefined;
-  const postUrl = params.slug?.[1];
-
-  // console.log("postUrl", postUrl, category);
-
-  if (!postUrl) {
-    try {
-      console.log("Are we here?");
-      return <div>The category page! {JSON.stringify(params)}</div>;
-    } catch (error) {
-      console.error(error);
-      return <div>Something went wrong!</div>;
-    }
-  }
-
-  console.log("Are we also here?");
-
   if (params.slug.length === 2) {
     const page = blogSource.getPage(params.slug);
+    const category = params.slug?.[0] || undefined;
 
     if (!page) notFound();
 

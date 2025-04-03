@@ -111,8 +111,8 @@ export const getCategoryBySlug = (slug: string) => {
       description:
         "Public brainstorming—future features, tool concepts, Teurons’ direction.",
     },
-    ideas: {
-      label: "Ideas",
+    idea: {
+      label: "Idea",
       icon: Brain,
       description:
         "Exploratory thoughts and wild concepts for Teurons and beyond.",
