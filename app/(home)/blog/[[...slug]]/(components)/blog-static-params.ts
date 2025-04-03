@@ -24,10 +24,13 @@ export async function generateBlogStaticParams() {
   const postsPerPage = 5;
   const totalPages = Math.ceil(staticParams.length / postsPerPage);
 
-  // Generate pagination params for root route
-  const rootPaginationParams = Array.from({ length: totalPages }, (_, i) => ({
-    slug: ["page", (i + 1).toString()],
-  }));
+  // Generate pagination params for root route - skip page 1 as it's handled by the root route
+  const rootPaginationParams = Array.from(
+    { length: totalPages - 1 },
+    (_, i) => ({
+      slug: ["page", (i + 2).toString()],
+    })
+  );
 
   // Generate pagination params for each category
   const categoryPaginationParams = [];
@@ -42,23 +45,39 @@ export async function generateBlogStaticParams() {
 
     const categoryTotalPages = Math.ceil(categoryPosts.length / postsPerPage);
 
-    for (let i = 0; i < categoryTotalPages; i++) {
+    // Skip page 1 as it's handled by the category route
+    for (let i = 1; i < categoryTotalPages; i++) {
       categoryPaginationParams.push({
         slug: [categorySlug, "page", (i + 1).toString()],
       });
     }
   }
 
+  // Filter out any params with slug containing 'page' and '1'
+  const filteredParams = [...staticParams, ...categories].filter((param) => {
+    // Keep params that don't have 'page' and '1' in sequence
+    if (param.slug && param.slug.includes("page")) {
+      const pageIndex = param.slug.indexOf("page");
+      if (
+        pageIndex >= 0 &&
+        pageIndex + 1 < param.slug.length &&
+        param.slug[pageIndex + 1] === "1"
+      ) {
+        return false; // Filter out page/1 entries
+      }
+    }
+    return true;
+  });
+
   // Combine all params
   const allParams = [
     { slug: [] }, // Root route
-    ...staticParams,
-    ...categories,
+    ...filteredParams,
     ...rootPaginationParams,
     ...categoryPaginationParams,
   ];
 
-  // console.log("generateStaticParams", allParams);
+  console.log("generateStaticParams", allParams);
 
   return allParams;
 }

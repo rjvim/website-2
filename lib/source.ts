@@ -75,7 +75,7 @@ export const getPostsByTag = (tag: string) => {
 
 export const getPostsByCategory = (category: string) => {
   return [...posts]
-    .filter((post) => post.data.category === category)
+    .filter((post) => post.slugs && post.slugs[0] === category)
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 };
 
@@ -83,7 +83,8 @@ export const getPostsByCategoryAndSlug = (category: string, slug: string) => {
   return (
     [...posts]
       .filter(
-        (post) => post.data.category === category && post.slugs[0] === slug
+        (post) =>
+          post.slugs && post.slugs[0] === category && post.slugs[1] === slug
       )
       .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())[0] ||
     undefined
