@@ -39,6 +39,12 @@ export const baseOptions: BaseLayoutProps = {
 export const linkItems: LinkItemType[] = [
   {
     icon: <Icons.info />,
+    text: "Blog",
+    url: "/blog",
+    active: "url",
+  },
+  {
+    icon: <Icons.info />,
     text: "About",
     url: "/about",
     active: "url",
