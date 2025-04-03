@@ -5,6 +5,7 @@ import { DocsBody, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { cn } from "@/lib/utils";
 import { Section } from "./section";
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
+import { GridBackground } from "./grid-background";
 
 interface MdxLayoutProps {
   children: ReactNode;
@@ -77,7 +78,7 @@ export default function MdxLayout({
 }: MdxLayoutProps): ReactNode {
   return (
     <>
-      <Section className="p-4 lg:p-6 bg-dashed">
+      <Section className="p-4 lg:p-6">
         <h1 className="text-center font-bold text-3xl leading-tight tracking-tighter md:text-4xl">
           {title}
         </h1>
@@ -91,11 +92,10 @@ export default function MdxLayout({
         }}
         sidebar={{ enabled: false, prefetch: false, tabs: false }}
         containerProps={{
-          className: cn(
-            "border-border/70 border-dashed sm:border-x dark:border-border container md:[--fd-nav-height:57px]"
-          ),
+          className: cn("relative container md:[--fd-nav-height:57px]"),
         }}
       >
+        <GridBackground maxWidthClass="container" />
         <DocsPage
           toc={toc}
           article={{

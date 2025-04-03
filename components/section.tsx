@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { PlusIcon } from "lucide-react";
 import type { HTMLAttributes } from "react";
+import { GridBackground } from "./grid-background";
 
 type SectionProps = {
   sectionClassName?: string;
@@ -25,14 +26,8 @@ export const Section = ({
 }: SectionProps) => (
   <section className={sectionClassName} {...props}>
     <div className="container relative mx-auto">
-      <div
-        className={cn(
-          "border-border/70 border-dashed sm:border-x dark:border-border",
-          className
-        )}
-      >
-        {children}
-      </div>
+      <GridBackground maxWidthClass="container" />
+      <div className={cn(className)}>{children}</div>
       <div className="-bottom-3 -left-3 absolute z-10 hidden h-6 sm:block">
         <Cross />
       </div>

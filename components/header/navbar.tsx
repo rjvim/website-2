@@ -8,7 +8,7 @@ import {
   NavigationMenuViewport,
 } from "fumadocs-ui/components/ui/navigation-menu";
 import { type HTMLAttributes, useState } from "react";
-import { Icons } from "../icons";
+import { GridBackground } from "../grid-background";
 
 export const Navbar = (props: HTMLAttributes<HTMLElement>) => {
   const [value, setValue] = useState("");
@@ -27,10 +27,10 @@ export const Navbar = (props: HTMLAttributes<HTMLElement>) => {
       >
         <div
           className={cn(
-            "relative container mx-auto flex size-full h-14 flex-row items-center",
-            "border-border/70 border-dashed sm:border-x dark:border-border"
+            "relative container mx-auto flex size-full h-14 flex-row items-center"
           )}
         >
+          <GridBackground maxWidthClass="container" />
           <div
             className="absolute top-0 left-0 h-14 w-14 -z-10"
             style={{

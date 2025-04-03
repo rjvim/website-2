@@ -9,6 +9,7 @@ import {
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { cn } from "@/lib/utils";
+import { GridBackground } from "@/components/grid-background";
 
 export default async function Page(props: {
   params: Promise<{ category: string; slug: string }>;
@@ -19,6 +20,8 @@ export default async function Page(props: {
   const lastModified = page?.data.lastModified;
   const lastUpdate = lastModified ? new Date(lastModified) : undefined;
   const tags = page?.data.tags ?? [];
+
+  console.log("tags", params.category, params.slug, tags);
 
   if (!page) notFound();
 
@@ -33,11 +36,10 @@ export default async function Page(props: {
       }}
       sidebar={{ enabled: false, prefetch: false, tabs: false }}
       containerProps={{
-        className: cn(
-          "border-border/70 border-dashed sm:border-x dark:border-border container md:[--fd-nav-height:57px]"
-        ),
+        className: cn("relative container md:[--fd-nav-height:57px]"),
       }}
     >
+      <GridBackground maxWidthClass="container" />
       <DocsPage
         toc={page.data.toc}
         full={page.data.full}
@@ -49,9 +51,9 @@ export default async function Page(props: {
           style: "clerk",
           single: false,
         }}
-        // article={{
-        //   className: "!max-w-[1120px]",
-        // }}
+        article={{
+          className: "!m-[unset] max-w-none py-12",
+        }}
       >
         <DocsTitle>{page.data.title}</DocsTitle>
         <DocsDescription>{page.data.description}</DocsDescription>
