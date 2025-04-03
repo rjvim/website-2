@@ -8,11 +8,12 @@ import { cn } from "@/lib/utils";
 
 export const ohimgConfig: OhImgBaseTemplateProps = {
   content: {
-    title: "NextJS Template for OSS Projects",
+    title: "rjv.im",
     description:
-      "All templates are not made same. SaaS Foundations templates are built beautifully and you can upgrade them.",
-    website: "github.com/rjvim/saas-foundations",
-    tags: ["open graph", "image", "generator"],
+      "work, open source projects, thoughts, ideas, commentary and opinions.",
+    website: "rjv.im",
+    // tags: ["personal", "website"],
+    // logoSrc: "/avatar.png",
   },
   gradient: {
     startColor: "#e2e8f0",

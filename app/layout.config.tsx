@@ -2,9 +2,10 @@ import { Icons } from "@/components/icons";
 import type { BaseLayoutProps, LinkItemType } from "fumadocs-ui/layouts/shared";
 import Image from "next/image";
 
-export const title = "SaaS Foundations";
-export const description = "NextJS Template to build SaaS applications";
-export const owner = "Rajiv I'm";
+export const title = "rjv.im";
+export const description =
+  "Personal website of Rajiv. This is where I articulate my work, open source projects, thoughts, ideas, work, commentary and opinions.";
+export const owner = "Rajiv";
 /**
  * Shared layout configurations
  *
