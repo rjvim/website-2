@@ -23,7 +23,7 @@ export function PostList({
   basePath = "/blog",
 }: PostListProps) {
   return (
-    <section className="relative flex w-full flex-col items-center overflow-x-hidden">
+    <section className="relative flex container flex-col items-center overflow-x-hidden">
       <GridBackground maxWidthClass="container" />
       <div className="relative flex flex-col items-center justify-center w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 pt-24 space-y-16">
         <div className="text-center">
