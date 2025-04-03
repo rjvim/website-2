@@ -19,21 +19,16 @@ import Hero from "@/components/hero";
 import { Calendar } from "lucide-react";
 
 export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ category: string; slug: string }>;
 }) {
   const params = await props.params;
   // const page = getBlogPost([params.slug]);
-  //   const page = getPostsByCategoryAndSlug(params.category, params.slug);
-  const page = blogSource.getPage(params.slug);
-
+  const page = getPostsByCategoryAndSlug(params.category, params.slug);
   const lastModified = page?.data.lastModified;
   const lastUpdate = lastModified ? new Date(lastModified) : undefined;
   const tags = page?.data.tags ?? [];
-  const category = params.slug?.[0] || "";
 
-  //   console.log("tags", params.category, params.slug, tags);
-
-  console.log("params", params);
+  // console.log("tags", params.category, params.slug, tags);
 
   if (!page) notFound();
 
@@ -46,11 +41,11 @@ export default async function Page(props: {
         <div className="mb-4 text-gray-600 dark:text-gray-400 text-sm font-medium">
           <div className="flex flex-wrap gap-3">
             <span className="inline-flex items-center gap-1.5 capitalize">
-              {getCategoryBySlug(category).icon &&
-                React.createElement(getCategoryBySlug(category).icon, {
+              {getCategoryBySlug(params.category).icon &&
+                React.createElement(getCategoryBySlug(params.category).icon, {
                   className: "h-4 w-4",
                 })}
-              {getCategoryBySlug(category).label}
+              {getCategoryBySlug(params.category).label}
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
@@ -71,7 +66,7 @@ export default async function Page(props: {
         </DocsDescription>
         <div className="flex flex-wrap gap-2 mt-4">
           <span className="px-2.5 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full text-xs font-medium">
-            {category}
+            {params.category}
           </span>
           {tags.length > 0 &&
             tags.map((tag) => (
@@ -129,6 +124,9 @@ export default async function Page(props: {
   );
 }
 
-export async function generateStaticParams() {
-  return blogSource.generateParams();
+export function generateStaticParams(): { category: string; slug: string }[] {
+  return blogSource.getPages().map((page) => ({
+    category: page.data.category,
+    slug: page.slugs[0] || "",
+  }));
 }

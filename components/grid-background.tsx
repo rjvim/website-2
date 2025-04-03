@@ -19,8 +19,6 @@ export const GridBackground: FC<GridBackgroundProps> = ({
 }) => {
   const { theme } = useTheme();
 
-  console.log(theme);
-
   // Create array based on column count
   const columnElements = Array.from({ length: columns }, (_, i) => (
     <div

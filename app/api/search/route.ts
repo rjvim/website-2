@@ -16,7 +16,7 @@ export const { staticGET: GET } = createSearchAPI("advanced", {
       };
     }),
     ...blogSource.getPages().map((page) => {
-      console.log("Blog Page URL:", page.url);
+      // console.log("Blog Page URL:", page.url);
       return {
         title: page.data.title,
         description: page.data.description,

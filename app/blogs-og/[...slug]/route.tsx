@@ -3,11 +3,10 @@ import { blogsMetaImage } from "@/lib/metadata-image";
 import type { ImageResponse } from "next/og";
 
 export const GET = blogsMetaImage.createAPI((page: any): ImageResponse => {
-  console.log("Generate Image Blog Page URL:", page.url);
   return generateOGImage({
     title: page.data.title,
     description: page.data.description,
-    site: "OSS",
+    site: "rjv.im",
   });
 });
 
