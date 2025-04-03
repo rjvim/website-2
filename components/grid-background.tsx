@@ -1,5 +1,8 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { FC } from "react";
+import { useTheme } from "next-themes";
 
 interface GridBackgroundProps {
   columns?: number;
@@ -12,10 +15,14 @@ interface GridBackgroundProps {
 export const GridBackground: FC<GridBackgroundProps> = ({
   columns = 4,
   className = "",
-  baseColor = "rgba(66,71,112,0.09)",
+  baseColor = "rgba(197, 15, 160, 0.09)",
   dottedColor = "rgba(66,71,112,0.09)",
   maxWidthClass = "container",
 }) => {
+  const { theme } = useTheme();
+
+  console.log(theme);
+
   // Create array based on column count
   const columnElements = Array.from({ length: columns }, (_, i) => (
     <div
