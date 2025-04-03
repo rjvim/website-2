@@ -49,7 +49,7 @@ export default async function Page(props: {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
-              Published{" "}
+              Last Updated{" "}
               {lastUpdate?.toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
