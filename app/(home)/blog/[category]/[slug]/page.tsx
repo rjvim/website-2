@@ -40,7 +40,7 @@ export default async function Page(props: {
         <GridBackground maxWidthClass="container" />
         <div className="mb-4 text-gray-600 dark:text-gray-400 text-sm font-medium">
           <div className="flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-1.5">
+            <span className="inline-flex items-center gap-1.5 capitalize">
               {getCategoryBySlug(params.category).icon &&
                 React.createElement(getCategoryBySlug(params.category).icon, {
                   className: "h-4 w-4",
