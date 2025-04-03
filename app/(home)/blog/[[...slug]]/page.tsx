@@ -20,14 +20,29 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+
+  if (!params.slug || params.slug.length === 0) {
+    return (
+      <div className="container px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">All Blog Posts</h1>
+        {/* List all blog posts here */}
+      </div>
+    );
+  }
+
   const category = params.slug?.[0] || undefined;
   const postUrl = params.slug?.[1];
 
   console.log("postUrl", postUrl, category);
 
   if (!postUrl) {
-    console.log("Are we here?");
-    return <div>The category page!</div>;
+    try {
+      console.log("Are we here?");
+      return <div>The category page! {JSON.stringify(params)}</div>;
+    } catch (error) {
+      console.error(error);
+      return <div>Something went wrong!</div>;
+    }
   }
 
   console.log("Are we also here?");
@@ -40,9 +55,9 @@ export default async function Page(props: {
 
   //   console.log("tags", params.category, params.slug, tags);
 
-  console.log("params", params.slug);
+  // console.log("params", params.slug);
 
-  if (!page) notFound();
+  // if (!page) notFound();
 
   const MDX = page.data.body;
 
@@ -150,30 +165,30 @@ export async function generateStaticParams() {
     );
 
   // Combine original params with category params
-  const allParams = [...staticParams, ...categories];
+  const allParams = [{ slug: [] }, ...staticParams, ...categories];
 
   console.log("generateStaticParams", allParams);
 
   return allParams;
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
-  const params = await props.params;
-  const page = blogSource.getPage(params.slug);
-  if (!page) notFound();
+// export async function generateMetadata(props: {
+//   params: Promise<{ slug?: string[] }>;
+// }) {
+//   const params = await props.params;
+//   const page = blogSource.getPage(params.slug);
+//   if (!page) notFound();
 
-  return createMetadata(
-    blogsMetaImage.withImage(page.slugs, {
-      title: page.data.title,
-      description: page.data.description,
-      openGraph: {
-        url: page.url,
-      },
-      alternates: {
-        canonical: page.url,
-      },
-    })
-  );
-}
+//   return createMetadata(
+//     blogsMetaImage.withImage(page.slugs, {
+//       title: page.data.title,
+//       description: page.data.description,
+//       openGraph: {
+//         url: page.url,
+//       },
+//       alternates: {
+//         canonical: page.url,
+//       },
+//     })
+//   );
+// }
