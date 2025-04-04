@@ -285,4 +285,6 @@
   }
 }
 
-/* @import "@locospec/responsive-preview-react/styles.css"; */
+.rpr {
+  @import "@locospec/responsive-preview-react/styles.css";
+}

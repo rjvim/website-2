@@ -5,8 +5,10 @@ import { ChildPreview } from "@locospec/responsive-preview-react";
 
 export default function ChildPreviewDemo() {
   return (
-    <ChildPreview>
-      <ContainerQueryCard />
-    </ChildPreview>
+    <div className="rpr">
+      <ChildPreview>
+        <ContainerQueryCard />
+      </ChildPreview>
+    </div>
   );
 }
