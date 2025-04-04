@@ -282,3 +282,5 @@
     @apply pe-0;
   }
 }
+
+@import "@locospec/responsive-preview-react/styles.css";
