@@ -8,11 +8,11 @@ export default function RightImage() {
   return (
     <div
       className="relative flex w-full flex-col items-center px-5 overflow-x-hidden"
-      style={{
-        marginBottom: "calc(calc(calc(100vw - 0px)* 0.106)*-1)",
-      }}
+      // style={{
+      //   marginBottom: "calc(calc(calc(100vw - 0px)* 0.106)*-1)",
+      // }}
     >
-      <div className="absolute inset-0 w-full h-full overflow-visible">
+      {/* <div className="absolute inset-0 w-full h-full overflow-visible">
         <div
           className="relative h-full w-full top-0 left-0 overflow-hidden"
           style={{
@@ -21,7 +21,7 @@ export default function RightImage() {
             background: "#f6f9fc",
           }}
         ></div>
-      </div>
+      </div> */}
 
       <GridBackground maxWidthClass="container" />
 

@@ -50,13 +50,13 @@ export default function HomePage() {
   return (
     <>
       <RightImage />
-      <div className="for-pattern relative -z-1">
+      {/* <div className="for-pattern relative -z-1">
         <StripePattern />
 
         <div className="pt-[12rem]">
           <AccordionFeatures features={demoData.features} />
         </div>
-      </div>
+      </div> */}
 
       <div className="bg-slate-50">
         <div className="relative isolate mx-auto container px-4 sm:px-6 lg:px-8">
