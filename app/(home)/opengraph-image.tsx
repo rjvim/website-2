@@ -3,7 +3,7 @@
 import { generateOGImage } from "@/components/og-image";
 
 // Image metadata
-export const alt = "OSS";
+export const alt = "rjv.im";
 export const size = {
   width: 1200,
   height: 630,

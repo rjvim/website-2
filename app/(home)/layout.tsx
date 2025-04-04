@@ -7,6 +7,7 @@ import { getLinks } from "fumadocs-ui/layouts/shared";
 import { Header } from "@/components/header";
 import { Icons } from "@/components/icons";
 import BigFooter from "@/components/big-footer";
+import StripeCanvas from "../stripe/(components)/canvas";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const footerNavigation = {
