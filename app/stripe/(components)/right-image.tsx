@@ -6,8 +6,24 @@ import { Button } from "@/components/ui/button";
 
 export default function RightImage() {
   return (
-    <div className="relative flex w-full flex-col items-center px-5 overflow-x-hidden">
-      <GridBackground maxWidthClass="max-w-7xl" />
+    <div
+      className="relative flex w-full flex-col items-center px-5 overflow-x-hidden"
+      style={{
+        marginBottom: "calc(calc(calc(100vw - 0px)* 0.106)*-1)",
+      }}
+    >
+      <div className="absolute inset-0 w-full h-full overflow-visible">
+        <div
+          className="relative h-full w-full top-0 left-0 overflow-hidden"
+          style={{
+            transformOrigin: "0 0",
+            transform: "skewY(-6deg)",
+            background: "#f6f9fc",
+          }}
+        ></div>
+      </div>
+
+      <GridBackground maxWidthClass="container" />
 
       <div className="relative isolate mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative grid-cols-1 pb-24 pt-32 md:grid-cols-[max(50%,400px)_1fr] grid mx-auto">
         <div className="space-y-8 sm:px-4">

@@ -69,7 +69,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         navigationMenu={navigationMenu}
         verticalNavigationMenu={verticalNavigationMenu}
       />
-      <StripeCanvas />
+      {/* <StripeCanvas /> */}
       {children}
       <BigFooter
         solutions={footerNavigation.solutions}

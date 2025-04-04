@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { GridBackground } from "@/components/grid-background";
+import StripePattern from "./stripe-pattern";
 
 interface FeatureItem {
   id: number;
@@ -64,8 +65,9 @@ const AccordionFeatures = ({ features }: Feature197Props) => {
   const [activeImage, setActiveImage] = useState(features[0].image);
 
   return (
-    <section className="relative isolate mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <section className="relative isolate mx-auto container px-4 sm:px-6 lg:px-8 py-16">
       <GridBackground maxWidthClass="max-w-7xl" />
+      {/* <StripePattern /> */}
       <div className="mb-12 flex w-full items-start justify-between gap-12">
         <div className="w-full md:w-1/2">
           <Accordion type="single" className="w-full" defaultValue="item-1">

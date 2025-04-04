@@ -1,0 +1,105 @@
+:root {
+  --angleNormal: -6deg;
+  --layoutWidth: 1280px;
+  --gutterWidth: calc((100vw - var(--layoutWidth)) / 2);
+  --stripeMaxInset: calc(var(--layoutWidth) / 2);
+
+  --stripeSetHeight: 72px;
+  --stripeHeight: 40px;
+  --stripeIntersectionTop: calc(var(--stripeSetHeight) - var(--stripeHeight));
+
+  --stripeInsetNormal: calc(var(--stripeMaxInset) * 0.25);
+  --stripeWidthNormal: 180px;
+  --stripeWidthMedium: 280px;
+
+  --stripeStartMax: calc(var(--layoutWidth) + var(--gutterWidth));
+  --stripeStart: calc(var(--stripeStartMax) - var(--stripeInsetNormal));
+
+  --blendBackground: #80e9ff;
+  --blendForeground: #7a73ff;
+  --blendIntersection: #0048e5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  :root {
+    --layoutWidth: 960px;
+    --stripeWidthNormal: 160px;
+    --stripeWidthMedium: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --layoutWidth: 720px;
+    --stripeWidthNormal: 140px;
+    --stripeWidthMedium: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --layoutWidth: 540px;
+    --stripeWidthMedium: 200px;
+    --stripeWidthNormal: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --layoutWidth: calc(100% - 40px);
+    --gutterWidth: 20px;
+    --stripeWidthMedium: 160px;
+    --stripeWidthNormal: 100px;
+  }
+}
+
+.stripe-set {
+  position: absolute;
+  height: var(--stripeSetHeight);
+  width: 100%;
+  transform: skewY(var(--angleNormal));
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transform-origin: 100% 0;
+}
+
+.stripe-background {
+  position: absolute;
+  height: var(--stripeHeight);
+  width: calc(var(--stripeWidthMedium) + var(--stripeInsetNormal));
+  right: var(--stripeStart);
+  background: var(--blendBackground);
+  overflow: hidden;
+}
+
+.stripe-foreground {
+  position: absolute;
+  height: var(--stripeHeight);
+  width: var(--stripeWidthNormal);
+  right: var(--stripeStartMax);
+  top: var(--stripeIntersectionTop);
+  background: var(--blendForeground);
+  overflow: hidden;
+  transform: translateY(-5px);
+}
+
+.stripe-intersection-container {
+  position: absolute;
+  height: var(--stripeHeight);
+  width: calc(var(--stripeWidthMedium) + var(--stripeInsetNormal));
+  right: var(--stripeStart);
+  background: transparent;
+  overflow: hidden;
+}
+
+.stripe-intersection {
+  position: absolute;
+  top: var(--stripeIntersectionTop);
+  height: var(--stripeHeight);
+  background: var(--blendIntersection);
+  left: calc(var(--stripeWidthMedium) - var(--stripeWidthNormal));
+  width: var(--stripeWidthNormal);
+  transform: translateY(-5.25px);
+}

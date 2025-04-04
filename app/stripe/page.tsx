@@ -3,6 +3,8 @@ import AccordionFeatures from "@/app/stripe/(components)/accordion-features";
 import RightImage from "@/app/stripe/(components)/right-image";
 import { GridBackground } from "@/components/grid-background";
 import StickyScroll from "@/app/stripe/(components)/sticky-scroll";
+import StripePattern from "./(components)/stripe-pattern";
+import ResponsiveStripePattern from "./(components)/responsive-stripe-pattern";
 
 export default function HomePage() {
   const demoData = {
@@ -48,7 +50,14 @@ export default function HomePage() {
   return (
     <>
       <RightImage />
-      <AccordionFeatures features={demoData.features} />
+      <div className="for-pattern relative -z-1">
+        <StripePattern />
+
+        <div className="pt-[12rem]">
+          <AccordionFeatures features={demoData.features} />
+        </div>
+      </div>
+
       <div className="bg-slate-50">
         <div className="relative isolate mx-auto container px-4 sm:px-6 lg:px-8">
           <GridBackground maxWidthClass="container" />
