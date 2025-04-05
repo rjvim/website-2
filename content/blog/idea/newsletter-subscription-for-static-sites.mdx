@@ -6,60 +6,20 @@ date: 2025-04-02
 tags: [static sites, newsletter, subscription]
 ---
 
-## Introduction
+## Problem
 
-Data mesh represents a paradigm shift in how organizations manage and access analytical data at scale. Unlike traditional centralized approaches, data mesh distributes ownership to domain teams while maintaining global standards.
+- I have a static site
+- I want to add a newsletter subscription
+  - I want to collect email addresses
+  - Verify the subscription by sending an email
+- I want to later send updates to the subscribers
+  - Some updates might be manual
+  - Some updates might be automated (What does automated updates even mean?!!)
+- Let's assume update format is markdown? or no?
+- Maybe use https://maily.to/ editor?
 
-## Beyond Centralization
+## Attempt 1
 
-Traditional data architectures face significant scaling challenges:
+Let's assume once we get list of all subscribers, sending email is a different problem (Maybe we can use https://resend.com/broadcasts). The challenge for now is how to collect the email address.
 
-### Limitations of Data Lakes
-
-Centralized data platforms often become bottlenecks:
-
-- Central teams become overwhelmed by domain-specific requests
-- Domain knowledge gets lost in translation
-- Change management becomes increasingly complex
-
-## Data Mesh Principles
-
-The data mesh approach is built on four key principles:
-
-### Domain Ownership
-
-Data is owned by the domains that understand it best:
-
-1. Product thinking applied to data
-2. Self-serve data infrastructure
-3. Federated computational governance
-
-## Implementation Challenges
-
-Organizations adopting data mesh face several hurdles:
-
-### Organizational Readiness
-
-Data mesh requires significant organizational maturity:
-
-```mermaid
-graph TD
-    A[Centralized Analytics] -->|Evolution| B[Data Lake/Warehouse]
-    B -->|Scaling Issues| C[Data Mesh]
-
-    subgraph "Requirements for Data Mesh"
-        D[Domain-Driven Design]
-        E[Product Thinking]
-        F[Self-Service Platforms]
-        G[Data Governance]
-    end
-```
-
-### Technical Infrastructure
-
-Building the self-serve data platform requires significant investment in tooling and standardization.
-
-<Cards>
-  <Card title="Domain-Driven Design" href="/docs/ddd" />
-  <Card title="Data Products" href="/docs/data-products" />
-</Cards>
+Resend has documented how to maintain audience: https://resend.com/docs/knowledge-base/audience-hygiene
