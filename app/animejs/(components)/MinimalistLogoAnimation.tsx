@@ -3,8 +3,8 @@
 import React, { useEffect, useRef } from "react";
 import { animate, stagger, createTimeline } from "animejs";
 
-const MinimalistLogoAnimation = () => {
-  const containerRef = useRef(null);
+const MinimalistLogoAnimation: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -16,26 +16,24 @@ const MinimalistLogoAnimation = () => {
 
     const timeline = createTimeline({
       defaults: {
-        duration: 1000,
+        duration: 800,
         ease: "outExpo",
       },
     })
       // Initial text animation - white text on black background
-      .add(elements, {
-        translateY: [50, 0],
+      .add(Array.from(elements), {
+        translateY: [40, 0],
         opacity: [0, 1],
-        delay: stagger(120),
+        delay: stagger(50),
       })
-      // Pause to let the text sink in
-      .add({}, { duration: 800 })
-      // Flip colors - black text on white background
+      // Color change transition
       .add(background, {
         backgroundColor: ["#000000", "#ffffff"],
         duration: 800,
         ease: "inOutQuad",
       })
       .add(
-        elements,
+        Array.from(elements),
         {
           color: ["#ffffff", "#000000"],
           duration: 800,
@@ -43,7 +41,7 @@ const MinimalistLogoAnimation = () => {
         },
         "-=800"
       )
-      // Animate the supporting text elements
+      // Animate supporting text
       .add(
         subtitle,
         {
@@ -65,7 +63,9 @@ const MinimalistLogoAnimation = () => {
         "-=600"
       );
 
-    return () => timeline.pause();
+    return () => {
+      timeline.pause();
+    };
   }, []);
 
   return (
@@ -77,7 +77,10 @@ const MinimalistLogoAnimation = () => {
         {/* Main Text */}
         <h1 className="relative text-9xl font-bold text-white z-10 tracking-tight mb-16">
           {"rjv_im".split("").map((letter, index) => (
-            <span key={index} className="letter inline-block opacity-0">
+            <span
+              key={index}
+              className="letter inline-block opacity-0 transform origin-bottom"
+            >
               {letter}
             </span>
           ))}
