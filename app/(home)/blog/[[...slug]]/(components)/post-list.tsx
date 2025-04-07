@@ -58,7 +58,7 @@ export function PostList({
                         ))}
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
+                    <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl text-left">
                       <Link
                         href={post.url}
                         className="hover:underline cursor-pointer"
@@ -66,7 +66,7 @@ export function PostList({
                         {post.data.title}
                       </Link>
                     </h3>
-                    <p className="mt-4 text-muted-foreground md:mt-5">
+                    <p className="mt-4 text-muted-foreground md:mt-5 text-left">
                       {post.data.description}
                     </p>
                     <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">
