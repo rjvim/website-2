@@ -74,11 +74,14 @@ export function ThemeToggle({
         // Set the mask position for the ripple effect
         document.documentElement.style.setProperty('--theme-toggle-x', `${x}px`);
         document.documentElement.style.setProperty('--theme-toggle-y', `${y}px`);
+        
+        // Add a class to identify this is a theme toggle transition
+        document.documentElement.classList.add('theme-toggle-transition');
+        document.documentElement.style.viewTransitionName = "root";
+        await document.startViewTransition(update).finished;
+        document.documentElement.style.viewTransitionName = "";
+        document.documentElement.classList.remove('theme-toggle-transition');
       }
-      
-      document.documentElement.style.viewTransitionName = "root";
-      await document.startViewTransition(update).finished;
-      document.documentElement.style.viewTransitionName = "";
     } else {
       update();
     }

@@ -301,7 +301,8 @@
   }
 }
 
-::view-transition-group(root) {
+/* Theme toggle specific transitions */
+.theme-toggle-transition::view-transition-group(root) {
   animation-duration: 750ms;
   animation-timing-function: linear(
     0 0%, 0.2342 12.49%, 0.4374 24.99%,
@@ -313,15 +314,15 @@
   );
 }
 
-::view-transition-new(root) {
+.theme-toggle-transition::view-transition-new(root) {
   mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100"><defs><filter id="blur"><feGaussianBlur stdDeviation="5"/></filter></defs><circle cx="0" cy="0" r="25" fill="white" filter="url(%23blur)"/></svg>') 0 0 / 100% 100% no-repeat;
   mask-position: var(--theme-toggle-x, 50%) var(--theme-toggle-y, 0);
   animation: theme-mask-scale 750ms ease-in-out;
   transform-origin: var(--theme-toggle-x, 50%) var(--theme-toggle-y, 0);
 }
 
-::view-transition-old(root),
-.dark::view-transition-old(root) {
+.theme-toggle-transition::view-transition-old(root),
+.theme-toggle-transition.dark::view-transition-old(root) {
   animation: theme-mask-scale 750ms ease-in-out;
   transform-origin: var(--theme-toggle-x, 50%) var(--theme-toggle-y, 0);
   z-index: -1;
