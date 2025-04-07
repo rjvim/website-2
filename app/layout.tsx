@@ -35,7 +35,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <head>
         <script
           crossOrigin="anonymous"
-          src="//cdn.jsdelivr.net/npm/meta-scan@0.10.2/dist/auto.global.js"
+          src="//cdn.jsdelivr.net/npm/meta-scan@0.11.1/dist/auto.global.js"
           data-auto-enable={"true"}
         />
       </head>
