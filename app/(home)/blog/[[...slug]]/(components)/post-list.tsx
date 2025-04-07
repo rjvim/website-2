@@ -95,10 +95,7 @@ export function PostList({
                     <Link href={post.url} className="block">
                       <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
                         <img
-                          src={
-                            post.data.image ||
-                            "https://shadcnblocks.com/images/block/placeholder-2.svg"
-                          }
+                          src={`https://picsum.photos/800/450?title=${post.data.title}`}
                           alt={post.data.title}
                           className="h-full w-full object-cover transition-opacity duration-200 fade-in hover:opacity-70"
                         />
