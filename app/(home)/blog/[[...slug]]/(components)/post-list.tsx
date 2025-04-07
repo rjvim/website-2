@@ -95,7 +95,7 @@ export function PostList({
                     <Link href={post.url} className="block">
                       <div className="aspect-[16/9] overflow-clip rounded-lg border border-border">
                         <img
-                          src={`https://picsum.photos/800/450?title=${post.data.title}`}
+                          src={`https://picsum.photos/400/225?grayscale&title=${post.data.title}`}
                           alt={post.data.title}
                           className="h-full w-full object-cover transition-opacity duration-200 fade-in hover:opacity-70"
                         />
