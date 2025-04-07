@@ -1,8 +1,8 @@
 import {
   getSortedByDatePosts,
   getPostsByCategory,
-  getCategoryBySlug,
 } from "@/lib/source";
+import { getCategoryBySlug } from "@/lib/categories";
 import { PostList } from "./post-list";
 
 export function BlogList({ page = 1 }: { page?: number }) {

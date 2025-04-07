@@ -1,8 +1,8 @@
 import {
   blogSource,
-  getCategoryBySlug,
   getSortedByDatePosts,
 } from "@/lib/source";
+import { getCategoryBySlug } from "@/lib/categories";
 import React from "react";
 import { notFound } from "next/navigation";
 import { blogsMetaImage } from "@/lib/metadata-image";

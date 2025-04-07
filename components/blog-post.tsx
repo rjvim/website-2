@@ -11,7 +11,7 @@ import { Calendar } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { GridBackground } from "@/components/grid-background";
-import { getCategoryBySlug } from "@/lib/source";
+import { getCategoryBySlug } from "@/lib/categories";
 
 interface BlogPostProps {
   page: any;
