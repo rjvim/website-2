@@ -1,6 +1,7 @@
 import { GridBackground } from "@/components/grid-background";
 import Hero from "@/components/hero";
 import Link from "next/link";
+import { BlogList } from "./blog/[[...slug]]/(components)/blog-list";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,8 @@ export default function HomePage() {
             <Hero />
           </div>
         </div>
+
+        <BlogList page={1} />
       </div>
     </div>
   );

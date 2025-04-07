@@ -14,9 +14,6 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
-
-  console.log("params", params);
-
   // There is no slug, it's /blog page
   if (!params.slug || params.slug.length === 0) {
     return <BlogList page={1} />;
