@@ -64,7 +64,19 @@ export function ThemeToggle({
     }
 
     if (document.startViewTransition && theme !== resolvedTheme) {
-      document.documentElement.style.viewTransitionName = "theme-transition";
+      // Get the toggle button position for the ripple effect
+      const toggleButton = document.querySelector('[data-theme-toggle]');
+      if (toggleButton) {
+        const rect = toggleButton.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+        
+        // Set the mask position for the ripple effect
+        document.documentElement.style.setProperty('--theme-toggle-x', `${x}px`);
+        document.documentElement.style.setProperty('--theme-toggle-y', `${y}px`);
+      }
+      
+      document.documentElement.style.viewTransitionName = "root";
       await document.startViewTransition(update).finished;
       document.documentElement.style.viewTransitionName = "";
     } else {
