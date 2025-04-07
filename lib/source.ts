@@ -23,7 +23,7 @@ export const {
 
 export type BlogPost = ReturnType<typeof getBlogPost>;
 
-const posts = getBlogPosts();
+const posts = getBlogPosts().filter(post => !post.data.draft);
 
 const getDate = (url: string) => {
   const slugs = url.replace(/^\/blog\//, "").split("/");
@@ -36,6 +36,11 @@ export const sortedByDatePageTree: PageTree.Root = {
   name: "Blogs",
   children: pageBlogTree.children
     .filter((node) => node.type === "page")
+    .filter((node) => {
+      const slugs = node.url.replace(/^\/blog\//, "").split("/");
+      const post = getBlogPost(slugs);
+      return post && !post.data.draft;
+    })
     .sort((a, b) => getDate(a.url) - getDate(b.url)),
 };
 
