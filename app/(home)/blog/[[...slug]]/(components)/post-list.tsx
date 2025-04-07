@@ -14,6 +14,7 @@ export type PostListProps = {
   heading?: string;
   description?: string;
   basePath?: string;
+  disablePagination?: boolean;
 };
 
 export function PostList({
@@ -23,6 +24,7 @@ export function PostList({
   heading = "Blog Posts",
   description = "Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
   basePath = "/blog",
+  disablePagination = false,
 }: PostListProps) {
   return (
     <section className="relative flex container flex-col items-center overflow-x-hidden">
@@ -105,11 +107,13 @@ export function PostList({
             ))}
         </div>
 
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          basePath={basePath}
-        />
+        {!disablePagination && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath={basePath}
+          />
+        )}
       </div>
     </section>
   );

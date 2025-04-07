@@ -15,7 +15,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <BlogList page={1} />
+        <BlogList page={1} disablePagination={true} />
       </div>
     </div>
   );
