@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { GridBackground } from "@/components/grid-background";
 import { Pagination } from "./pagination";
+import { DocsTitle, DocsDescription } from "fumadocs-ui/page";
 // import { Pagination } from "./pagination";
 // import { GridBackground } from "./grid-background";
 
@@ -31,12 +32,12 @@ export function PostList({
       <GridBackground maxWidthClass="container" />
       <div className="relative flex flex-col items-center justify-center w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 pt-24 space-y-16">
         <div className="text-center">
-          <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl">
+          <DocsTitle className="text-left dark:text-white">
             {heading}
-          </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
+          </DocsTitle>
+          <DocsDescription className="text-left mt-3 dark:text-gray-300">
             {description}
-          </p>
+          </DocsDescription>
         </div>
 
         <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
