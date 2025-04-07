@@ -2,8 +2,10 @@ import Link from "next/link";
 import { BlogPost } from "@/lib/source";
 import { Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
+import { GridBackground } from "@/components/grid-background";
 import { Pagination } from "./pagination";
-import { GridBackground } from "./grid-background";
+// import { Pagination } from "./pagination";
+// import { GridBackground } from "./grid-background";
 
 export type PostListProps = {
   posts: BlogPost[];

@@ -1,7 +1,4 @@
-import {
-  getSortedByDatePosts,
-  getPostsByCategory,
-} from "@/lib/source";
+import { getSortedByDatePosts, getPostsByCategory } from "@/lib/source";
 import { getCategoryBySlug } from "@/lib/categories";
 import { PostList } from "./post-list";
 

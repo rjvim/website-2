@@ -1,14 +1,14 @@
-import {
-  blogSource,
-  getSortedByDatePosts,
-} from "@/lib/source";
+import { blogSource, getSortedByDatePosts } from "@/lib/source";
 import { getCategoryBySlug } from "@/lib/categories";
 import React from "react";
 import { notFound } from "next/navigation";
 import { blogsMetaImage } from "@/lib/metadata-image";
 import { createMetadata } from "@/lib/metadata";
-import { BlogPost } from "@/components/blog-post";
-import { BlogList, CategoryBlogList } from "@/components/blog-list";
+import { BlogPost } from "@/app/(home)/blog/[[...slug]]/(components)/blog-post";
+import {
+  BlogList,
+  CategoryBlogList,
+} from "@/app/(home)/blog/[[...slug]]/(components)/blog-list";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
