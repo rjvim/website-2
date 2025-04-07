@@ -28,18 +28,20 @@ export function PostList({
   disablePagination = false,
 }: PostListProps) {
   return (
-    <section className="relative flex container flex-col items-center overflow-x-hidden">
-      <GridBackground maxWidthClass="container" />
-      <div className="relative flex flex-col items-center justify-center w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12 pt-24 space-y-16">
+    <>
+      <section className="relative container px-4 py-8 lg:py-12 lg:px-6 text-left bg-zinc-50/50 dark:bg-zinc-900/50">
+        <GridBackground maxWidthClass="container" />
+
         <div className="text-center">
-          <DocsTitle className="text-left dark:text-white">
-            {heading}
-          </DocsTitle>
-          <DocsDescription className="text-left mt-3 dark:text-gray-300">
+          <DocsTitle className="text-left dark:text-white">{heading}</DocsTitle>
+          <DocsDescription className="text-left mt-3 dark:text-gray-300 mb-0">
             {description}
           </DocsDescription>
         </div>
+      </section>
 
+      <section className="relative container px-4 py-8 lg:py-12 lg:px-6 text-left">
+        <GridBackground maxWidthClass="container" />
         <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
           {posts
             .filter(
@@ -115,7 +117,7 @@ export function PostList({
             basePath={basePath}
           />
         )}
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
