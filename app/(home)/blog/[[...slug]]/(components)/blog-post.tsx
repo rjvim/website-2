@@ -5,7 +5,8 @@ import {
   DocsDescription,
   DocsTitle,
 } from "fumadocs-ui/page";
-import defaultMdxComponents from "fumadocs-ui/mdx";
+import { getMDXComponents } from "@/mdx-components";
+
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { Calendar } from "lucide-react";
 import Link from "next/link";
@@ -104,7 +105,7 @@ export function BlogPost({ page, category, lastUpdate, tags }: BlogPostProps) {
             }}
           >
             <DocsBody>
-              <MDX components={{ ...defaultMdxComponents }} />
+              <MDX components={getMDXComponents()} />
             </DocsBody>
           </DocsPage>
         </div>
