@@ -4,7 +4,6 @@ import { createMDXSource } from "fumadocs-mdx";
 import type { InferMetaType, InferPageType } from "fumadocs-core/source";
 import type { PageTree } from "fumadocs-core/server";
 
-
 export const docsSource = loader({
   baseUrl: "/posts",
   source: docs.toFumadocsSource(),
@@ -23,7 +22,7 @@ export const {
 
 export type BlogPost = ReturnType<typeof getBlogPost>;
 
-const posts = getBlogPosts().filter(post => !post.data.draft);
+const posts = getBlogPosts().filter((post) => !post.data.draft);
 
 const getDate = (url: string) => {
   const slugs = url.replace(/^\/blog\//, "").split("/");
